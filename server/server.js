@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
+const cors = require('cors');
 require('dotenv').config();
 
 const CrosswordGenerator = require('./classes/CrosswordGenerator');
@@ -8,7 +9,7 @@ const WordSoupGenerator = require('./classes/WordSoupGenerator');
 const FileManager = require('./classes/FileManager');
 
 const app = express();
-const port = 8098;
+const port = 8089;
 const publicPath = path.join(__dirname, 'public');
 
 // Environment variables
@@ -26,6 +27,7 @@ const upload = multer({ storage: storage });
 
 // Middleware
 app.use(express.static(publicPath));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -102,6 +104,9 @@ app.post('/generate-game', upload.single('file-upload'), async (req, res) => {
         });
     }
 });
+
+
+app.use(express.static(path.join(__dirname, '../client/public')));
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

@@ -32,6 +32,7 @@ export class UIUtils {
         elements.documentTextarea.style.display = selectedType === 'text' ? 'block' : 'none';
         elements.fileUploadInput.style.display = selectedType === 'file' ? 'block' : 'none';
         elements.topicInput.style.display = selectedType === 'topic' ? 'block' : 'none';
+        console.log('yes');
     }
 
     /**

@@ -58,9 +58,11 @@ export class WordSoupDisplay extends DisplayBase {
             });
         });
 
+        
         container.appendChild(table);
         elements.crosswordContainer.appendChild(container);
     }
+        
 
     /**
      * Начинает выделение слова

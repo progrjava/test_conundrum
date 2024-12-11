@@ -2,8 +2,9 @@
   "name": "conundrum",
   "version": "1.0.0",
   "main": "server.js",
+  "proxy": "http://localhost:3000",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.46.1",
     "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "crossword-layout-generator": "^0.1.1",
     "crosswords-js": "^0.1.14",
     "docx": "^9.0.2",
